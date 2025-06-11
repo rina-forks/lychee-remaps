@@ -68,6 +68,14 @@ Note that in this case we have:
 1. An `.md` file we exclude because we are intentionally linking to a `.md` file.
 2. Two path arguments because some repo files are `.md` and some are `.mdx`
 
+## 💡 Remap: Stack Overflow links to API endpoints
+
+Stack Overflow implements Cloudflare bot detection that blocks automated link checkers. Use the Stack Exchange API as a workaround:
+
+```bash
+lychee --remap 'stackoverflow.com/questions/(\d+)/.* api.stackexchange.com/2.3/questions/$1?site=stackoverflow'
+```
+
 ## Contributing
 
 Please contribute your own remap expressions here! You can just edit this file and create a pull request.
